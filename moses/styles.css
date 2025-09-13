@@ -112,6 +112,9 @@ p { line-height: 1.7; }
 .btn.outline { background: transparent; color: var(--blue-700); border: 2px solid rgba(37, 99, 235, 0.4); }
 .btn.ghost { background: rgba(167, 139, 250, 0.12); color: var(--lilac-500); border: 1px solid rgba(167, 139, 250, 0.4); }
 .btn.link { padding: 0.6rem 0.9rem; background: rgba(37,99,235,0.06); color: var(--blue-700); border: 1px solid rgba(37,99,235,0.2); }
+/* WhatsApp button variant */
+.btn.whatsapp { background: #25D366; color: #fff; border: 1px solid #1ebe57; box-shadow: 0 8px 18px rgba(37, 211, 102, 0.25); }
+.btn.whatsapp:hover { transform: translateY(-2px); background: #1ebe57; }
 
 .quick-highlights { display: flex; gap: 0.5rem; flex-wrap: wrap; list-style: none; padding: 0; margin: 0 0 0.75rem; }
 .quick-highlights li { padding: 0.35rem 0.6rem; border-radius: 999px; background: rgba(37, 99, 235, 0.1); color: var(--blue-700); font-weight: 600; font-size: 0.9rem; border: 1px solid rgba(37, 99, 235, 0.2); }
@@ -192,6 +195,14 @@ p { line-height: 1.7; }
 .back-to-top { position: fixed; right: 18px; bottom: 18px; width: 42px; height: 42px; border-radius: 50%; border: 1px solid var(--border); background: #fff; box-shadow: var(--shadow); cursor: pointer; display: grid; place-items: center; opacity: 0; transform: translateY(12px); transition: opacity 0.2s ease, transform 0.2s ease; }
 .back-to-top.show { opacity: 1; transform: translateY(0); }
 
+/* Floating WhatsApp button */
+.whatsapp-float { position: fixed; right: 18px; bottom: 74px; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border-radius: 999px; text-decoration: none; font-weight: 800; background: #25D366; color: #fff; border: 1px solid #1ebe57; box-shadow: 0 10px 24px rgba(37,211,102,0.35); z-index: 120; }
+.whatsapp-float:hover { background: #1ebe57; }
+.whatsapp-float svg { display: block; }
+@media (max-width: 480px) {
+  .whatsapp-float span { display: none; }
+}
+
 /* Toast */
 .toast { position: fixed; left: 50%; bottom: 70px; transform: translateX(-50%);
   background: #0f172a; color: #fff; padding: 10px 14px; border-radius: 10px; font-weight: 600;
@@ -206,6 +217,7 @@ p { line-height: 1.7; }
 @media print {
   body { background: #fff; }
   .site-header, .nav-toggle, .hire-btn, .hero-ctas, .wave-sep, .back-to-top, .toast, .contact-ctas { display: none !important; }
+  .whatsapp-float { display: none !important; }
   .card { box-shadow: none; border: 1px solid #ddd; }
   .section { padding: 1rem 0; }
   a { color: #111 !important; text-decoration: none !important; border: 0 !important; }
